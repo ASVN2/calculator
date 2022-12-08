@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=League+Spartan:wght@400;500;600;700&family=Roboto:ital,wght@0,300;1,100;1,300&display=swap");
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: hsl(222deg, 26%, 31%);
+  font-family: "League Spartan", sans-serif;
+  transition: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.calc-container {
+  width: 350px;
+  margin: auto;
+}
+.calc-container .head {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+.calc-container .head .text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.calc-container .switcher {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.calc-container .switcher .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.calc-container .switcher .theme {
+  background-color: hsl(223deg, 31%, 20%);
+  padding: 3px 5px;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.calc-container .switcher .theme .this {
+  cursor: pointer;
+  background-color: transparent;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.3s;
+}
+.calc-container .switcher .theme .this.active {
+  background-color: hsl(6deg, 63%, 50%);
+}
+.calc-container .switcher .theme .this::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+.calc-container .switcher .theme .this.active {
+  opacity: 1;
+}
+.calc-container .switcher .theme .two {
+  background-color: transparent;
+}
+.calc-container .switcher .theme .two.active {
+  background-color: hsl(6deg, 63%, 50%);
+}
+.calc-container .switcher .theme .three {
+  background-color: transparent;
+}
+.calc-container .switcher .theme .three.active {
+  background-color: greenyellow;
+}
+.calc-container .screen {
+  background-color: hsl(224deg, 36%, 15%);
+  color: white;
+  text-align: end;
+  font-weight: bold;
+  font-size: 3rem;
+  transition: 0.3s;
+  padding: 15px 15px;
+  margin: 25px 0;
+  border-radius: 5px;
+}
+.calc-container .clac-keys {
+  padding: 15px;
+  background-color: hsl(223deg, 31%, 20%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: 0.3s;
+  row-gap: 20px;
+  border-radius: 10px;
+}
+.calc-container .clac-keys .key {
+  transition: 0.3s;
+  height: 50px;
+  width: 70px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: hsl(30deg, 25%, 89%);
+  border: none;
+  border-radius: 5px;
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: hsl(28deg, 16%, 65%) 0px 3px 0px;
+}
+.calc-container .clac-keys .key:active {
+  transform: scale(0.9);
+}
+.calc-container .clac-keys .key:hover {
+  filter: brightness(1.2);
+}
+.calc-container .clac-keys .two-time {
+  transition: 0.3s;
+  width: 155px;
+}
+.calc-container .clac-keys .del,
+.calc-container .clac-keys .reset {
+  background-color: hsl(225deg, 21%, 49%);
+  box-shadow: hsl(224deg, 28%, 35%) 0px 3px 0px;
+  transition: 0.3s;
+  color: white;
+}
+.calc-container .clac-keys .red {
+  transition: 0.3s;
+  background-color: hsl(6deg, 63%, 50%);
+  box-shadow: hsl(6deg, 70%, 34%) 0px 3px 0px;
+  color: white;
+}
+
+.calc-container.two .head {
+  transition: 0.3s;
+  color: hsl(60deg, 10%, 19%);
+}
+.calc-container.two .switcher .theme {
+  transition: 0.3s;
+  background-color: hsl(0deg, 5%, 81%);
+}
+.calc-container.two .screen {
+  background-color: hsl(0deg, 0%, 93%);
+  transition: 0.3s;
+  color: hsl(60deg, 10%, 19%);
+}
+.calc-container.two .clac-keys {
+  transition: 0.3s;
+  background-color: hsl(0deg, 5%, 81%);
+}
+.calc-container.two .clac-keys .del,
+.calc-container.two .clac-keys .reset {
+  background-color: hsl(185deg, 42%, 37%);
+  transition: 0.3s;
+  box-shadow: hsl(185deg, 58%, 25%) 0px 3px 0px;
+}
+
+.calc-container.three .head {
+  transition: 0.3s;
+  color: hsl(52deg, 100%, 62%);
+}
+.calc-container.three .switcher .theme {
+  transition: 0.3s;
+  background-color: hsl(268deg, 71%, 12%);
+}
+.calc-container.three .screen {
+  background-color: hsl(268deg, 71%, 12%);
+  transition: 0.3s;
+  color: hsl(52deg, 100%, 62%);
+}
+.calc-container.three .clac-keys {
+  color: hsl(0deg, 0%, 93%);
+  background-color: hsl(268deg, 71%, 12%);
+  transition: 0.3s;
+}
+.calc-container.three .clac-keys .key {
+  color: hsl(52deg, 100%, 62%);
+  transition: 0.3s;
+  background-color: #331b4d;
+  box-shadow: hsl(290deg, 70%, 36%) 0px 3px 0px;
+}
+.calc-container.three .clac-keys .del,
+.calc-container.three .clac-keys .reset {
+  color: white;
+  transition: 0.3s;
+  background-color: #56077c;
+  box-shadow: hsl(290deg, 70%, 36%) 0px 3px 0px;
+}
+.calc-container.three .clac-keys .equal {
+  transition: 0.3s;
+  background-color: hsl(176deg, 100%, 44%);
+  box-shadow: hsl(177deg, 92%, 70%) 0px 3px 0px;
+  color: hsl(281deg, 89%, 26%);
+}/*# sourceMappingURL=style.css.map */
